@@ -39,7 +39,7 @@
     </header>
 
     <h1>BLE Scan</h1>
-    
+
     <section id='home'>
         <img class="center" src="img/chip.png">
         <button onclick="app.ui.onStartScanButton()" class="green">
@@ -48,9 +48,10 @@
         <button onclick="app.ui.onStopScanButton()" class="charcoal">
             STOP SCAN
         </button>
-        <p id="scan-status">Scanning Paused</p>
+        <p id="scan-status">...</p>
         <ul id="found-devices" class="dynamic"></ul>
     </section>
+
 
     <section id='connected' style="display:none">
         <div id="loadingView" style="display:none">

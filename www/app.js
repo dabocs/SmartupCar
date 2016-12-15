@@ -111,7 +111,7 @@ app.ui.displayDeviceList = function () {
 
             // Create tag for device data.
             var element = $(
-				'<li onclick="app.connectTo(\'' +
+				'<li class="device" onclick="app.connectTo(\'' +
 					device.address + '\')">'
 				+ '<strong>' + device.name + '</strong><br />'
 				// Do not show address on iOS since it can be confused
@@ -138,7 +138,7 @@ app.ui.displayStatus = function (message) {
 
 
 
-app.showLoadingLabel = function (message) {
+app.ui.showLoadingLabel = function (message) {
 
     $('#loadingView').show();
     $('#loadingStatus').text(message);
@@ -150,7 +150,7 @@ app.connectTo = function (address) {
 
     device = app.devices[address];
 
-    app.showLoadingLabel('Trying to connect to ' + device.name);
+    app.ui.showLoadingLabel('Trying to connect to ' + device.name);
 
     function onConnectSuccess(device) {
 
@@ -196,7 +196,7 @@ app.connectTo = function (address) {
             console.log('Error reading services: ' + errorCode);
         }
 
-        app.showLoadingLabel('Identifying services...');
+        app.ui.showLoadingLabel('Identifying services...');
 
         // Connect to the appropriate BLE service
         device.readServices(
@@ -322,3 +322,4 @@ function printLoadAverage(data) {
 
 
 app.initialize();
+//alert("Hi there");
